@@ -1,0 +1,904 @@
+/* COLORS */
+/* Light theme colors */
+/* Dark theme colors */
+/* Brand colors */
+/* */
+/* FONTS */
+/* */
+/* EXTENDNS */
+.footer .footer--link, .header .header--link {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  text-decoration: none;
+}
+
+.footer .footer--user-icon, .header .header--user-icon {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.about--gallery img, .product--banner img, .product--img, .main--hero .hero--image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer hr {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.main--hero .hero--seo-text {
+  color: #EEEEEE;
+  font-family: "Raleway", helvetica, arial, sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  width: 80%;
+  text-align: center;
+  padding: auto;
+}
+
+.about--form-cont, .main--text-cont {
+  width: 80%;
+}
+
+.gallery, .main--h2-text, .main--text-cont {
+  margin-top: 2rem;
+}
+
+.header {
+  filter: drop-shadow(0px 3px 3px #313131);
+}
+
+/* */
+/* MIXINS */
+/* */
+/* SITE STYLES */
+.header {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #EEEEEE;
+  /* Responsive stiles*/
+}
+.header .header--logo {
+  width: 165px;
+}
+.header .header--user-nav {
+  display: flex;
+  flex-direction: row;
+}
+.header .header--link {
+  font-size: clamp(0.8rem, 2vw, 1.25rem);
+  color: #313131;
+  padding: 10px;
+}
+.header .header--user-icon {
+  padding: 10px;
+}
+@media screen and (max-width: 690px) {
+  .header .header--logo {
+    width: 100px;
+  }
+  .header .header--link {
+    padding: 5px;
+  }
+  .header .header--user-icon {
+    padding: 5px;
+  }
+}
+
+.main--hero .hero--h1-text {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1.4rem, 1.8vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+  padding: 8rem;
+  filter: drop-shadow(0px 3px 3px #313131);
+}
+.main--hero .hero--sup-text-container {
+  background-color: #8B6CFF;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.main--hero .hero--home {
+  background-image: url("../IMG/banners/hero_HOME_sbs.png");
+  width: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.main--hero .hero--tienda {
+  background-image: url("../IMG/banners/hero_TIENDA_sbs.png");
+  width: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.main--hero .hero--nosotros {
+  background-image: url("../IMG/banners/hero_NOSOTROS_sbs.png");
+  width: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.main--hero .hero--contacto {
+  background-image: url("../IMG/banners/hero_CONTACTO_sbs.png");
+  width: 100%;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* MAIN */
+.main--body-container {
+  display: block;
+}
+
+.main--text-cont {
+  margin: auto;
+}
+
+.main--h2-text {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+  font-weight: 600;
+  color: #4600C1;
+  line-height: 1.5;
+}
+
+.main--text {
+  font-family: "Raleway", helvetica, arial, sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 500;
+  color: #313131;
+  line-height: 1.5;
+}
+
+/* Dark theme styles*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #313131;
+  }
+  .main--h2-text {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+    font-weight: 600;
+    color: #8B6CFF;
+    line-height: 1.5;
+  }
+  .main--text {
+    font-family: "Raleway", helvetica, arial, sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 500;
+    color: #EEEEEE;
+    line-height: 1.5;
+  }
+}
+/* */
+.footer {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #fff;
+  background-color: #321E83;
+  padding: 50px;
+  margin-top: 8rem;
+  /* Responsive Styles*/
+}
+.footer .footer--nav {
+  flex-basis: 50%;
+}
+.footer .footer--link {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: #EEEEEE;
+  padding: 10px;
+}
+.footer .footer--user-icon {
+  color: #EEEEEE;
+  width: 1.5rem;
+}
+.footer .footer--user-nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 50%;
+}
+.footer .footer--logo-cont {
+  flex-basis: 50%;
+}
+.footer .footer--logo {
+  width: 300px;
+}
+.footer .footer--legal {
+  flex-basis: 50%;
+}
+.footer .footer--legal-text {
+  font-family: "Raleway", helvetica, arial, sans-serif;
+  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #EEEEEE;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+.footer .footer--legal-span {
+  font-family: "Raleway", helvetica, arial, sans-serif;
+  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #EEEEEE;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+@media screen and (max-width: 690px) {
+  .footer .footer--link {
+    padding: 5px;
+  }
+  .footer .footer--logo {
+    width: 10rem;
+  }
+  .footer .footer--nav {
+    flex-basis: 70%;
+  }
+  .footer .footer--user-nav {
+    flex-basis: 30%;
+  }
+}
+
+/* Products*/
+.products {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.products--grid {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product--description {
+  font-family: "Raleway", helvetica, arial, sans-serif;
+  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #313131;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+/* COLORS styles*/
+.GENERAL {
+  color: #4600C1;
+}
+
+.MTB {
+  color: #C15F00;
+}
+
+.GRAVEL {
+  color: #8F9A2C;
+}
+
+.URBAN-T {
+  color: #FFC337;
+}
+
+.ACCESORIES {
+  color: #088DD2;
+}
+
+/* GENERAL styles*/
+.product--name-GENERAL {
+  margin-top: 2rem;
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 600;
+  color: #4600C1;
+  line-height: 1.5;
+}
+
+.see--more-GENERAL {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #4600C1;
+  padding: 10px;
+}
+
+.product--buy-button-GENERAL {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #fff;
+  background-color: #4600C1;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* MTB styles*/
+.product--name-MTB {
+  margin-top: 2rem;
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 600;
+  color: #C15F00;
+  line-height: 1.5;
+}
+
+.see--more-MTB {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #C15F00;
+  padding: 10px;
+}
+
+.product--buy-button-MTB {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #fff;
+  background-color: #C15F00;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* GRAVEL styles*/
+.product--name-GRAVEL {
+  margin-top: 2rem;
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 600;
+  color: #8F9A2C;
+  line-height: 1.5;
+}
+
+.see--more-GRAVEL {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #8F9A2C;
+  padding: 10px;
+}
+
+.product--buy-button-GRAVEL {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #fff;
+  background-color: #8F9A2C;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* URBAN-T styles*/
+.product--name-URBAN-T {
+  margin-top: 2rem;
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 600;
+  color: #FFC337;
+  line-height: 1.5;
+}
+
+.see--more-URBAN-T {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #FFC337;
+  padding: 10px;
+}
+
+.product--buy-button-URBAN-T {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #fff;
+  background-color: #FFC337;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* ACCESORIES styles*/
+.product--name-ACCESORIES {
+  margin-top: 2rem;
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  font-weight: 600;
+  color: #088DD2;
+  line-height: 1.5;
+}
+
+.see--more-ACCESORIES {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #088DD2;
+  padding: 10px;
+}
+
+.product--buy-button-ACCESORIES {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #fff;
+  background-color: #088DD2;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.product--banner {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+.product--banner img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+/* Dark theme styles*/
+@media (prefers-color-scheme: dark) {
+  .product--description {
+    font-family: "Raleway", helvetica, arial, sans-serif;
+    font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    font-weight: 400;
+    line-height: 1.5;
+    color: #EEEEEE;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  /* COLORS styles*/
+  .GENERAL {
+    color: #8B6CFF;
+  }
+  .MTB {
+    color: #FFAC5C;
+  }
+  .GRAVEL {
+    color: #AFD67B;
+  }
+  .URBAN-T {
+    color: #FFD165;
+  }
+  .ACCESORIES {
+    color: #82D4FF;
+  }
+  /* GENERAL styles*/
+  .product--name-GENERAL {
+    margin-top: 2rem;
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    font-weight: 600;
+    color: #8B6CFF;
+    line-height: 1.5;
+  }
+  .see--more-GENERAL {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #8B6CFF;
+    padding: 10px;
+  }
+  .product--buy-button-GENERAL {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #8B6CFF;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  /* MTB styles*/
+  .product--name-MTB {
+    margin-top: 2rem;
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    font-weight: 600;
+    color: #FFAC5C;
+    line-height: 1.5;
+  }
+  .see--more-MTB {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #FFAC5C;
+    padding: 10px;
+  }
+  .product--buy-button-MTB {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #FFAC5C;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  /* GRAVEL styles*/
+  .product--name-GRAVEL {
+    margin-top: 2rem;
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    font-weight: 600;
+    color: #AFD67B;
+    line-height: 1.5;
+  }
+  .see--more-GRAVEL {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #AFD67B;
+    padding: 10px;
+  }
+  .product--buy-button-GRAVEL {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #AFD67B;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  /* URBAN-T styles*/
+  .product--name-URBAN-T {
+    margin-top: 2rem;
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    font-weight: 600;
+    color: #FFD165;
+    line-height: 1.5;
+  }
+  .see--more-URBAN-T {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #FFD165;
+    padding: 10px;
+  }
+  .product--buy-button-URBAN-T {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #FFD165;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  /* ACCESORIES styles*/
+  .product--name-ACCESORIES {
+    margin-top: 2rem;
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(1rem, 1.3vw, 1.25rem);
+    font-weight: 600;
+    color: #82D4FF;
+    line-height: 1.5;
+  }
+  .see--more-ACCESORIES {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #82D4FF;
+    padding: 10px;
+  }
+  .product--buy-button-ACCESORIES {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #82D4FF;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+}
+/* Hover styles*/
+@media (hover: hover) {
+  .product--buy-button-GENERAL:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #4600C1;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px #313131);
+  }
+  .see--more-GENERAL:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: underline;
+    color: #4600C1;
+    padding: 10px;
+  }
+  .product--buy-button-MTB:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #C15F00;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px #313131);
+  }
+  .see--more-MTB:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: underline;
+    color: #C15F00;
+    padding: 10px;
+  }
+  .product--buy-button-GRAVEL:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #8F9A2C;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px #313131);
+  }
+  .see--more-GRAVEL:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: underline;
+    color: #8F9A2C;
+    padding: 10px;
+  }
+  .product--buy-button-URBAN-T:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #FFC337;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px #313131);
+  }
+  .see--more-URBAN-T:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: underline;
+    color: #FFC337;
+    padding: 10px;
+  }
+  .product--buy-button-ACCESORIES:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #088DD2;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px #313131);
+  }
+  .see--more-ACCESORIES:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: underline;
+    color: #088DD2;
+    padding: 10px;
+  }
+}
+/* */
+/* Contact form styles*/
+.about--form-cont {
+  display: grid;
+  grid-template-columns: 4fr;
+  margin: auto;
+}
+
+.form--input {
+  width: 100%;
+}
+
+.contact--input-box {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #EEEEEE;
+  padding: 10px;
+  width: 100%;
+}
+
+.contact--input-label {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 600;
+  color: #313131;
+  line-height: 1.5;
+  margin-top: 2rem;
+}
+
+.contact--button {
+  font-family: "MuseoModerno", helvetica, arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  text-decoration: none;
+  color: #fff;
+  background-color: #4600C1;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dark theme styles*/
+@media (prefers-color-scheme: dark) {
+  .contact--input-box {
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #474747;
+    padding: 10px;
+    width: 100%;
+  }
+  .contact--input-label {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 600;
+    color: #EEEEEE;
+    line-height: 1.5;
+    margin-top: 2rem;
+  }
+  .contact--button {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #8B6CFF;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+}
+/* Hover styles*/
+@media (hover: hover) {
+  .contact--button:hover {
+    font-family: "MuseoModerno", helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    text-decoration: none;
+    color: #fff;
+    background-color: #4600C1;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 3px #313131);
+  }
+}
+/* */
+/* About gallery styles*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  box-sizing: border-box;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+}
+
+.about--gallery {
+  width: 100%;
+  height: 100%;
+}
+.about--gallery img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.img-1 {
+  grid-column: 2/4;
+  grid-row: 2;
+}
+
+.img-2 {
+  grid-column: 4/5;
+  grid-row: 2;
+}
+
+.img-3 {
+  grid-column: 2/3;
+  grid-row: 3/5;
+}
+
+.img-4 {
+  grid-column: 3/5;
+  grid-row: 3;
+}
+
+.img-5 {
+  grid-column: 3/4;
+  grid-row: 4;
+}
+
+.img-6 {
+  grid-column: 4/5;
+  grid-row: 4/6;
+}
+
+.img-7 {
+  grid-column: 2/4;
+  grid-row: 5;
+}
+
+/* *//*# sourceMappingURL=styles.css.map */

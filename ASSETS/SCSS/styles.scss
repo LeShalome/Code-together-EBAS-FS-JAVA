@@ -1,0 +1,801 @@
+/* COLORS */ 
+    /* Light theme colors */ 
+    $LT-GENERAL-accent-color: #4600C1;
+    $LT-MTB-accent-color: #C15F00;
+    $LT-GRAVEL-accent-color: #8F9A2C;
+    $LT-URBAN-T-accent-color: #FFC337;
+    $LT-ACCESORIES-accent-color: #088DD2;
+    $LT-light-gray-BG-color: #EEEEEE;
+
+    /* Dark theme colors */ 
+    $DT-GENERAL-accent-color: #8B6CFF;
+    $DT-MTB-accent-color: #FFAC5C;
+    $DT-GRAVEL-accent-color: #AFD67B;
+    $DT-URBAN-T-accent-color: #FFD165;
+    $DT-ACCESORIES-accent-color: #82D4FF;
+    $DT-BG-color: #474747;
+    $DT-dark-gray-BG-color: #313131;
+
+    /* Brand colors */ 
+    $dark-purple: #321E83;
+    $white: #fff;
+    $light-gray: #EEEEEE;
+    $dark-gray: #313131;
+    $black: #000;
+/* */ 
+
+
+
+
+/* FONTS */ 
+    $mainFont: "Raleway", helvetica, arial, sans-serif; 
+    $titleFont: "MuseoModerno", helvetica, arial, sans-serif; 
+/* */ 
+
+
+
+
+/* EXTENDNS */ 
+    %link{
+        font-family: $titleFont;
+        text-decoration: none;
+    }
+
+    %userIcon {
+        cursor: pointer;
+        padding: 10px;    
+    }
+
+    %image{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    %hr{
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    %seoText{
+        color: $light-gray;
+        font-family: $mainFont;
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
+        width: 80%;
+        text-align: center;
+        padding: auto;
+    }
+
+    %bodyWidth {
+        width: 80%;
+    }
+
+    %marginTop {
+        margin-top: 2rem;
+    }  
+
+    %dropShadow {
+        filter: drop-shadow(0px 3px 3px $dark-gray);  
+    }
+/* */ 
+
+
+
+
+/* MIXINS */ 
+    @mixin flexbox{
+        display: flex;
+        box-sizing: border-box; 
+    }
+
+    @mixin heroImage ($background-image) {
+        background-image: $background-image;
+        width: 100%;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @mixin h1Text ($color) {
+        font-family: $titleFont;
+        font-size: clamp(1.4rem, 1.8vw, 2rem); 
+        font-weight: 800;
+        color: $color;
+        line-height: 1.5;
+        text-align: center;
+        padding: 8rem;
+        filter: drop-shadow(0px 3px 3px $dark-gray);
+    }
+
+    @mixin h2Text ($color) {
+        font-family: $titleFont;
+        font-size: clamp(1.2rem, 1.6vw, 1.5rem); 
+        font-weight: 600;
+        color: $color;
+        line-height: 1.5;
+        @extend %marginTop;
+    }
+
+    @mixin mainText ($color) {
+        font-family: $mainFont;
+        font-size: clamp(.85rem, 1.2vw, 1rem); 
+        font-weight: 500;
+        color: $color;
+        line-height: 1.5;
+    }
+
+    @mixin productName ($color) {
+        margin-top: 2rem;
+        font-family: $titleFont;
+        font-size: clamp(1rem, 1.3vw, 1.25rem); 
+        font-weight: 600;
+        color: $color;
+        line-height: 1.5;
+    }
+
+    @mixin productDescription ($color) {
+        font-family: $mainFont;
+        font-size: clamp(.75rem, 1.2vw, .85rem);
+        font-weight: 400;
+        line-height: 1.5;
+        color: $color;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    @mixin seeMore ($color, $text-deco) {
+        font-family: $titleFont;
+        font-weight: 500;
+        font-size: clamp(.8rem, 1.5vw, 1rem); 
+        text-decoration: $text-deco;
+        color: $color;
+        padding: 10px;  
+    }
+
+    @mixin button ($color, $background-color) {
+        font-family: $titleFont;
+        font-weight: 600;
+        font-size: clamp(.8rem, 1.5vw, 1rem); 
+        text-decoration: none;
+        color: $color;
+        background-color: $background-color;
+        border-radius: 5px;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+    }
+
+    @mixin footerText ($fontWeight){
+        font-family: $mainFont;
+        font-size: clamp(.75rem, 1.2vw, .85rem);
+        font-weight: $fontWeight;
+        line-height: 1.5;
+        color: $light-gray;
+        text-align: right;
+        padding-bottom: 1rem;
+    }
+
+    @mixin contactInputBox ($background-color) {
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        border: none;
+        background-color: $background-color;
+        padding: 10px;
+        width: 100%;
+    }
+
+    @mixin contactInputLabel ($background-color) {
+        font-family: $titleFont;
+        font-size: clamp(.85rem, 1.2vw, 1rem); 
+        font-weight: 600;
+        color: $background-color;
+        line-height: 1.5; 
+        margin-top: 2rem;
+    }
+/* */ 
+
+
+
+
+/* SITE STYLES */ 
+
+.header{
+    @include flexbox;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: $light-gray;
+    @extend %dropShadow;
+
+    .header--logo{
+        width: 165px;
+    }
+    
+    .header--user-nav{
+        display: flex;
+        flex-direction: row;  
+    }
+    
+    .header--link{
+        @extend %link;
+        font-size: clamp(.8rem, 2vw, 1.25rem); 
+        color: $dark-gray;
+        padding: 10px;
+    }
+    
+    .header--user-icon{
+        @extend %userIcon;
+        padding: 10px; 
+    }
+
+    /* Responsive stiles*/ 
+    @media screen and (max-width:690px){
+        .header--logo{
+            width: 100px;
+        }
+        
+        .header--link{
+            padding: 5px;
+        }
+        
+        .header--user-icon{
+            padding: 5px; 
+        }
+    }
+}
+
+
+
+.main--hero{
+    .hero--image{
+        @extend %image;
+    }
+    
+    .hero--h1-text{
+        @include h1Text ($white);
+    }
+    
+    .hero--sup-text-container{
+        background-color: $DT-GENERAL-accent-color;
+        padding:50px;
+        box-sizing: border-box;
+    }
+    
+    .hero--seo-text{
+        @extend %seoText;
+    }
+    
+    .hero--home{
+        @include heroImage (url("../IMG/banners/hero_HOME_sbs.png"));
+    }
+    
+    .hero--tienda{
+        @include heroImage (url("../IMG/banners/hero_TIENDA_sbs.png"));
+    }
+    
+    .hero--nosotros{
+        @include heroImage (url("../IMG/banners/hero_NOSOTROS_sbs.png"));
+    }
+    
+    .hero--contacto{
+        @include heroImage (url("../IMG/banners/hero_CONTACTO_sbs.png"));
+    }
+}
+
+
+/* MAIN */ 
+    .main--body-container{
+    display: block;
+    }
+
+    .main--text-cont{
+    @extend %bodyWidth;
+    margin: auto;
+    @extend %marginTop;
+    }
+
+    .main--h2-text{
+        @include h2Text ($LT-GENERAL-accent-color);
+    }
+
+    .main--text{
+        @include mainText($dark-gray);
+    }
+
+
+    /* Dark theme styles*/ 
+    @media (prefers-color-scheme: dark){
+        body{
+            background-color: $DT-dark-gray-BG-color;
+        }
+
+        .main--h2-text{
+            @include h2Text ($DT-GENERAL-accent-color);
+        }
+    
+        .main--text{
+            @include mainText($light-gray);
+        }
+    }
+
+/* */     
+
+
+
+.footer{
+    @include flexbox;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    color: $white;
+    background-color: $dark-purple;
+    padding: 50px;
+    margin-top: 8rem;
+
+    hr{
+        @extend  %hr;
+    }
+
+
+    .footer--nav{
+        flex-basis: 50%;
+    }
+    
+    .footer--link{
+        @extend %link;
+        font-size: clamp(.8rem, 1.5vw, 1rem); 
+        color: $light-gray;
+        padding: 10px;
+    }
+    
+    .footer--user-icon{
+        @extend %userIcon;
+        color: $light-gray;
+        width: 1.5rem;
+    }
+    
+    .footer--user-nav{
+        display: flex;
+        justify-content: flex-end;
+        flex-basis: 50%;
+    }
+    
+    .footer--logo-cont{
+        flex-basis: 50%;
+    }
+    
+    .footer--logo{
+        width: 300px;
+    }
+    
+    .footer--legal{
+        flex-basis: 50%;
+    }
+    
+    .footer--legal-text{
+        @include footerText (400);
+    }
+    
+    .footer--legal-span{
+        @include footerText (600);
+    }
+
+    
+    /* Responsive Styles*/
+    @media screen and (max-width:690px){ 
+        .footer--link{
+            padding: 5px;
+        }
+        
+        .footer--logo{
+            width: 10rem;
+        }
+
+        .footer--nav{
+            flex-basis: 70%;
+        }
+    
+        .footer--user-nav{
+            flex-basis: 30%;
+        }
+    }
+}
+
+
+/* Products*/ 
+    .products{
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
+    .products--grid{
+        @include flexbox;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product--img{
+        @extend %image;
+    }
+    
+    .product--description{
+        @include productDescription ($dark-gray);
+    }
+    
+
+    /* COLORS styles*/ 
+        .GENERAL{
+            color: $LT-GENERAL-accent-color;
+        }
+            
+        .MTB{
+            color: $LT-MTB-accent-color;
+        }
+            
+        .GRAVEL{
+            color: $LT-GRAVEL-accent-color;
+        }
+            
+        .URBAN-T{
+            color: $LT-URBAN-T-accent-color;
+        }
+            
+        .ACCESORIES{
+        color: $LT-ACCESORIES-accent-color;
+    }        
+
+
+    /* GENERAL styles*/ 
+        .product--name-GENERAL{
+            @include productName ($LT-GENERAL-accent-color);
+        }
+        
+        .see--more-GENERAL{
+            @include seeMore ($LT-GENERAL-accent-color, none);
+        }
+        
+        .product--buy-button-GENERAL{
+            @include button ($white, $LT-GENERAL-accent-color);
+    }
+    
+
+    /* MTB styles*/ 
+        .product--name-MTB{
+            @include productName ($LT-MTB-accent-color);
+        }
+        
+        .see--more-MTB{
+            @include seeMore ($LT-MTB-accent-color, none);
+        }
+        
+        .product--buy-button-MTB{
+            @include button ($white, $LT-MTB-accent-color);
+    }
+    
+    
+    /* GRAVEL styles*/ 
+        .product--name-GRAVEL{
+            @include productName ($LT-GRAVEL-accent-color);
+        }
+        
+        .see--more-GRAVEL{
+            @include seeMore ($LT-GRAVEL-accent-color, none);
+        }
+        
+        .product--buy-button-GRAVEL{
+            @include button ($white, $LT-GRAVEL-accent-color);
+    }
+    
+
+    /* URBAN-T styles*/ 
+    .product--name-URBAN-T{
+        @include productName ($LT-URBAN-T-accent-color);
+        }
+        
+        .see--more-URBAN-T{
+            @include seeMore ($LT-URBAN-T-accent-color, none);
+        }
+        
+        .product--buy-button-URBAN-T{
+            @include button ($white, $LT-URBAN-T-accent-color);
+    }
+    
+
+    /* ACCESORIES styles*/ 
+        .product--name-ACCESORIES{
+            @include productName ($LT-ACCESORIES-accent-color);
+        }
+        
+        .see--more-ACCESORIES{
+            @include seeMore ($LT-ACCESORIES-accent-color, none);
+        }
+        
+        .product--buy-button-ACCESORIES{
+            @include button ($white, $LT-ACCESORIES-accent-color);
+    }    
+    
+
+
+    .product--banner{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        
+        img {
+            @extend %image;
+            object-fit: scale-down;
+        }
+    }
+    
+
+    /* Dark theme styles*/ 
+    @media (prefers-color-scheme: dark){
+        .product--description{
+            @include productDescription ($light-gray);
+        }
+        
+
+        /* COLORS styles*/ 
+            .GENERAL{
+                color: $DT-GENERAL-accent-color;
+            }
+                
+            .MTB{
+                color: $DT-MTB-accent-color;
+            }
+                
+            .GRAVEL{
+                color: $DT-GRAVEL-accent-color;
+            }
+                
+            .URBAN-T{
+                color: $DT-URBAN-T-accent-color;
+            }
+                
+            .ACCESORIES{
+            color: $DT-ACCESORIES-accent-color;
+        }
+
+        /* GENERAL styles*/ 
+            .product--name-GENERAL{
+                @include productName ($DT-GENERAL-accent-color);
+            }
+            
+            .see--more-GENERAL{
+                @include seeMore ($DT-GENERAL-accent-color, none);
+            }
+            
+            .product--buy-button-GENERAL{
+                @include button ($white, $DT-GENERAL-accent-color);
+        }
+        
+
+        /* MTB styles*/ 
+            .product--name-MTB{
+                @include productName ($DT-MTB-accent-color);
+            }
+            
+            .see--more-MTB{
+                @include seeMore ($DT-MTB-accent-color, none);
+            }
+            
+            .product--buy-button-MTB{
+                @include button ($white, $DT-MTB-accent-color);
+        }
+        
+        
+        /* GRAVEL styles*/ 
+            .product--name-GRAVEL{
+                @include productName ($DT-GRAVEL-accent-color);
+            }
+            
+            .see--more-GRAVEL{
+                @include seeMore ($DT-GRAVEL-accent-color, none);
+            }
+            
+            .product--buy-button-GRAVEL{
+                @include button ($white, $DT-GRAVEL-accent-color);
+        }
+        
+
+        /* URBAN-T styles*/ 
+        .product--name-URBAN-T{
+            @include productName ($DT-URBAN-T-accent-color);
+            }
+            
+            .see--more-URBAN-T{
+                @include seeMore ($DT-URBAN-T-accent-color, none);
+            }
+            
+            .product--buy-button-URBAN-T{
+                @include button ($white, $DT-URBAN-T-accent-color);
+        }
+        
+
+        /* ACCESORIES styles*/ 
+            .product--name-ACCESORIES{
+                @include productName ($DT-ACCESORIES-accent-color);
+            }
+            
+            .see--more-ACCESORIES{
+                @include seeMore ($DT-ACCESORIES-accent-color, none);
+            }
+            
+            .product--buy-button-ACCESORIES{
+                @include button ($white, $DT-ACCESORIES-accent-color);
+        }
+    }
+
+
+
+    /* Hover styles*/ 
+    @media (hover:hover){ 
+        .product--buy-button-GENERAL:hover{
+            @include button ($white, $LT-GENERAL-accent-color);
+            filter: drop-shadow(0px 3px 3px $dark-gray);  
+        }
+        
+        .see--more-GENERAL:hover{
+            @include seeMore ($LT-GENERAL-accent-color, underline);
+        }
+
+        .product--buy-button-MTB:hover{
+            @include button ($white, $LT-MTB-accent-color);
+            filter: drop-shadow(0px 3px 3px $dark-gray);  
+        }
+        
+        .see--more-MTB:hover{
+            @include seeMore ($LT-MTB-accent-color, underline); 
+        }
+
+        .product--buy-button-GRAVEL:hover{
+            @include button ($white, $LT-GRAVEL-accent-color);
+            filter: drop-shadow(0px 3px 3px $dark-gray);  
+        }
+        
+        .see--more-GRAVEL:hover{
+            @include seeMore ($LT-GRAVEL-accent-color, underline); 
+        }
+
+        .product--buy-button-URBAN-T:hover{
+            @include button ($white, $LT-URBAN-T-accent-color);
+            filter: drop-shadow(0px 3px 3px $dark-gray);  
+        }
+        
+        .see--more-URBAN-T:hover{
+            @include seeMore ($LT-URBAN-T-accent-color, underline); 
+        }
+
+        .product--buy-button-ACCESORIES:hover{
+            @include button ($white, $LT-ACCESORIES-accent-color);
+            filter: drop-shadow(0px 3px 3px $dark-gray);  
+        }
+        
+        .see--more-ACCESORIES:hover{
+            @include seeMore ($LT-ACCESORIES-accent-color, underline); 
+        }
+    }
+/* */ 
+
+
+
+/* Contact form styles*/ 
+    .about--form-cont{
+        display: grid;
+        grid-template-columns: 4fr;
+        @extend %bodyWidth;
+        margin: auto;
+    }
+
+    .form--input{
+        width: 100%;
+    }
+
+    .contact--input-box{
+        @include contactInputBox($LT-light-gray-BG-color)
+    }
+
+    .contact--input-label{
+        @include contactInputLabel($dark-gray)
+    }
+
+    .contact--button{
+        @include button ($white, $LT-GENERAL-accent-color);
+    }
+
+
+    /* Dark theme styles*/ 
+    @media (prefers-color-scheme: dark){
+        .contact--input-box{
+            @include contactInputBox($DT-BG-color)
+        }
+    
+        .contact--input-label{
+            @include contactInputLabel($light-gray)
+        }
+    
+        .contact--button{
+            @include button ($white, $DT-GENERAL-accent-color);
+        }
+    }
+
+
+    /* Hover styles*/ 
+    @media (hover:hover){
+        .contact--button:hover{
+            @include button ($white, $LT-GENERAL-accent-color);
+            filter: drop-shadow(0px 3px 3px $dark-gray);  
+        }
+    }
+/* */ 
+
+
+
+/* About gallery styles*/ 
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+        box-sizing: border-box;
+        align-content: space-between;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+        @extend %marginTop;
+    }
+    
+    .about--gallery{
+        width: 100%;
+        height: 100%;
+        
+        img {
+            @extend %image;
+            object-fit: scale-down;
+        }
+    }
+    
+    .img-1 {
+        grid-column: 2/4;
+        grid-row: 2;
+    }
+    
+    .img-2 {
+        grid-column: 4/5;
+        grid-row: 2;
+    }
+    
+    .img-3 {
+        grid-column: 2/3;
+        grid-row: 3/5;
+    }
+    
+    .img-4 {
+        grid-column: 3/5;
+        grid-row: 3;
+    }
+    
+    .img-5 {
+        grid-column: 3/4;
+        grid-row: 4;
+    }
+    
+    .img-6 {
+        grid-column: 4/5;
+        grid-row: 4/6;
+    }
+    
+    .img-7 {
+        grid-column: 2/4;
+        grid-row: 5;
+    }
+/* */ 
+
+
+
